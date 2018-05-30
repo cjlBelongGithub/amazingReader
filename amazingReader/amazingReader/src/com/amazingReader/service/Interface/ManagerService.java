@@ -7,17 +7,19 @@ import com.amazingReader.entity.ReportChapter;
 import com.amazingReader.entity.ReportComment;
 
 public interface ManagerService {
+	void login(Manager manager);
+	
 	void register(Manager manager);
 	List<ReportChapter> getReportChapter(int managerID);
 	List<ReportComment> getReportComment(int managerID);
 	/**
-	 * 接受举报，进入处理状态
+	 * 鎺ュ彈涓炬姤锛岃繘鍏ュ鐞嗙姸鎬�
 	 */
 	void acepteReportChapter(int reportId);
 	
 	void acepteReportComment(int reportId);
 	/**
-	 * 拒绝举报
+	 * 鎷掔粷涓炬姤
 	 * @param reportId
 	 */
 	void refuseReportChapter(int reportId);
@@ -25,7 +27,7 @@ public interface ManagerService {
 	void refuseReportComment(int reportId);
 	
 	/**
-	 * 处理举报
+	 * 澶勭悊涓炬姤
 	 * @param reportSolution
 	 */
 	void dealReportChapter(int reportId,String reportSolution);
