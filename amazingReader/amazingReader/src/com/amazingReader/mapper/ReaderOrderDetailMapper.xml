@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amazingReader.mapper.ReaderOrderDetailMapper">
+    <!--boolean add(ReaderOrderDetail readerOrderDetail);-->
+    <insert id="add" parameterType="ReaderOrderDetail">
+        insert into reader_order_detail values(#{readerOrderId},#{readerOrderDetailChapterId
+        ,#{readerOrderDetailBookId},#{readerOrderDetailPrice})
+    </insert>
+	<!--boolean alter(ReaderOrderDetail readerOrderDetail);-->
+    <update id="alter" parameterType="ReaderOrderDetail">
+        update reader_order_detail set reader_order_detail_chapter_id=#{readerOrderDetailChapterId,
+        reader_order_detail_book_id=#{readerOrderDetailBookId},reader_order_detail_price=#{readerOrderDetailPrice}
+        where reader_order_id=#{readerOrderId}
+    </update>
+	<!--boolean remove(int ReaderOrderDetailId);-->
+    <delete id="remove" parameterType="int">
+       /* delete from reader_order_detail where*/
+    </delete>
+
+	<!--List<ReaderOrderDetail> getOrderDetail(int readerId,int orderId);-->
+    <select id="getOrderDetail" resultType="ReaderOrderDetail">
+        select reader_id,d.* from reader_order o,reader_order_detail d where o.reader_order_id = d.reader_order_id and reader_order_id=#{_parameter2} and o.reader_id = #{_parameter1}
+    </select>
+	<!--ReaderOrderDetail getOrderDetailByOrderID(int orderId);-->
+	<select id="getOrderDetailByOrderID">
+		select * form reader_order_detail where reader_order_id=#{_parameter}
+	</select>
+	<!-- ReaderOrderDetail get(int readerId,int chapterId); -->
+	<select id = "get" resultType="ReaderOrderDetail">
+		select reader_id,d.* from reader_order o,reader_order_detail d where o.reader_order_id = d.reader_order_id and reader_order_detail_chapter_id=#{_parameter2} and o.reader_id = #{_parameter1}
+	</select>
+</mapper>

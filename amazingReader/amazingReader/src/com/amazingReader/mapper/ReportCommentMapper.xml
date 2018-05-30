@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amazingReader.mapper.ReportCommentMapper">
+    <insert id="add" parameterType="ReportComment">
+        insert into report_comment values(#{reportId},#{commentId},#{readerId},#{reportTypeId},
+        #{reportReason},#{reportTime},#{reportSolution},1,#{reportManagerId})
+    </insert>
+    <update id="alter" parameterType="ReportComment">
+        UPDATE report_comment set report_solution=#{reportSolution},report_statu_id=#{reportStatuId} where report_id=#{reportId}
+    </update>
+    <select id="getBymanagerId" parameterType="int" resultType="ReportComment">
+        select * from report_comment where report_manager_id=#{_parameter}
+    </select>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amazingReader.mapper.BookLabelMapper">
+    <select id="getMaxIndex" resultType="int">
+        SELECT MAX(book_label_id) from book_label
+    </select>
+    <insert id="add" parameterType="BookLabel">
+        INSERT  into book_label(book_label_name,book_label_belong_style) VALUES ("#{bookLabelName}",#{bookLabelBelongStyle})
+    </insert>
+    <update id="alter" parameterType="BookLabel">
+        UPDATE book_label SET book_label_name=#{bookLabelName},book_label_belong_style=#{bookLabelBelongStyle}
+        WHERE book_label_id=#{bookLabelId}
+    </update>
+    <delete id="removeBookByBookLabe" parameterType="BookLabel">
+
+      DELETE FROM book  WHERE book_id in(SELECT book_id from book_label_relation blr where blr.label_id=#{bookLabelId})
+    </delete>
+
+    <delete id="removeBooksByBookLabelId" parameterType="int">
+
+       DELETE FROM book  WHERE book_id in(SELECT book_id from book_label_relation blr where blr.label_id=#{_parameter})
+    </delete>
+
+    <select id="getBookLabel" parameterType="int" resultType="BookLabel">
+        SELECT * FROM book_label WHERE book_label_id=#{_parameter}
+    </select>
+
+    <select id="getBookLabels"  resultType="BookLabel">
+        SELECT * FROM book_label
+    </select>
+
+
+</mapper>

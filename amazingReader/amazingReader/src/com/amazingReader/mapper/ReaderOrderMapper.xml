@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amazingReader.mapper.ReaderOrderMapper">
+    <!--boolean add(ReaderOrder readerOrder);-->
+    <insert id="add" parameterType="ReaderOrder">
+        insert into reader_order values(#{readerOrderId},#{readerOrderTypeId},
+        #{readerOrderPrice},#{readerOrderObjectId},#{readerOrderTime},#{readerOrderDetail},#{readerId})
+    </insert>
+    <!--boolean alter(ReaderOrder readerOrder);-->
+    <update id="alter" parameterType="ReaderOrder">
+        update reader_order set reader_order_type_id=#{readerOrderTypeId},reader_order_price=#{readerOrderPrice},
+        reader_order_object_id=#{readerOrderObjectId},reader_order_time=#{readerOrderTime},
+        reader_order_detail=#{readerOrderDetail} where reader_id=#{readerId}
+    </update>
+
+    <!--boolean remove(int ReaderOrderDetailId);-->
+    <delete id="remove" parameterType="int">
+        delete from reader_order where reader_order_id=#{_parameter}
+    </delete>
+
+
+    <resultMap id="getOrderDetailMap" type="ReaderOrderDetail">
+        <id column="reader_order_id" property="readerOrderId"/>
+        <result column="reader_order_detail_chapter_id" property="readerOrderDetailChapterId"/>
+        <result column="reader_order_detail_book_id" property="readerOrderDetailBookId"/>
+        <result column="reader_order_detail_price" property="readerOrderDetailPrice"/>
+
+    </resultMap>
+    <!--List<ReaderOrderDetail> getOrderDetail(int orderId);
+    List<ReaderOrderDetail> getOrderDetail(int orderId)-->
+    <select id="getOrderDetail" parameterType="int" resultMap="getOrderDetailMap">
+        select * from reader_order_detail where reader_order_id=#{_parameter}
+    </select>
+    <!--ReaderOrder getOrderByOrderID(int orderId);-->
+    <select id="getOrderByOrderID" parameterType="int" resultType="ReaderOrder">
+        select * from reader_order where reader_order_id=#{_parameter}
+    </select>
+
+    <!--List<ReaderOrder> getOrdersByReaderId(int readerId);-->
+    <select id="getOrdersByReaderId" parameterType="int" resultType="ReaderOrder">
+        select * from reader_order where reader_id=#{_parameter}
+    </select>
+</mapper>

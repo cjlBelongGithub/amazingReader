@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amazingReader.mapper.BookMapper">
+    <!--public boolean removeBook(Book book);
+    public boolean removeByBookId(int bookId);
+    public Book getBookById(int bookId);
+    public Book getBookByName(String bookName);
+    public List<Book> getBooksByLabelId(int LabelId);
+    public void addRecommendTicket(int tickets,int bookId );
+    public String selectBookContent(String content);-->
+    <delete id="removeBook" parameterType="Book">
+        DELETE FROM book WHERE book_id=#{bookId}
+    </delete>
+
+    <delete id="removeByBookId" parameterType="int">
+        DELETE FROM book WHERE book_id=#{_parameter}
+    </delete>
+
+    <select id="getBookById" parameterType="int" resultType="Book">
+        SELECT * FROM book WHERE book_id=#{_parameter}
+    </select>
+
+    <select id="getBookByName" parameterType="String" resultType="Book">
+        SELECT * FROM book WHERE book_name=#{_parameter}
+    </select>
+
+    <select id="getBooksByLabelId" parameterType="int" resultType="Book">
+        SELECT b.* FROM book b,book_label_relation blr WHERE b.book_id=blr.book_id and blr.label_id=#{_parameter}
+    </select>
+
+    <update id="addRecommendTicket" parameterType="int">
+        UPDATE book SET book_recommend_ticket=book_recommend_ticket+#{_parameter1} WHERE book_id=#{_parameter2}
+    </update>
+    <select id="selectBookContent" parameterType="String" resultType="String">
+        SELECT * from chapter WHERE chapter_content LIKE "%" "#{_parameter}" "%"
+    </select>
+</mapper>

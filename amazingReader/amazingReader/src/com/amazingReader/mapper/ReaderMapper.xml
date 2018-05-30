@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amazingReader.mapper.ReaderMapper">
+    <!--boolean add(Reader reader);-->
+    <insert id="add" parameterType="Reader">
+        INSERT INTO reader (`reader_neck_name`, `reader_password`, `reader_balance`, `reader_score`, `reader_statu_id`, `reader_recommend_ticket`, `reader_sex`, `reader_birthday`, `reader_color`, `reader_tel`)
+        VALUES (#{readerNeckName}, #{readerPassword}, #{readerBalance}, #{readerLevel}, #{readerStatuId}, #{readerRecommendTicket}, #{readerSex}, #{readerBirthday}, #{readerColor}, #{readerTel})
+    </insert>
+    <!--boolean alter(Reader reader);-->
+    <update id="alter" parameterType="Reader">
+        update Reader set reader_neck_name = #{readerNeckName}, reader_password = #{readerPassword}, reader_balance=#{readerBalance} ,
+              reader_sex =#{readerSex}, reader_birthday=#{readerBirthday}, reader_color=#{readerColor},reader_tel=#{readerTel}
+              where reader_id = #{readerId}
+    </update>
+    <!--boolean remove(int readerId);-->
+    <delete id="remove" parameterType="int">
+        delete from Reader where reader_id = #{_parameter}
+    </delete>
+    <!--Reader getReader(int readerId);-->
+    <select id="getReader" parameterType="int" resultType="Reader">
+        select * from Reader where reader_id = #{_parameter}
+    </select>
+    <!-- Reader getReaderByName(String readerNeckName); -->
+    <select id = "getReaderByName" parameterType="String">
+  	  select * from reader where reader_neck_name = #{_parameter}
+    </select>
+</mapper>
