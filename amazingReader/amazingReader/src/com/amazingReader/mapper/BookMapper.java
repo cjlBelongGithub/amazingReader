@@ -21,7 +21,8 @@ public interface BookMapper {
 	public void addRecommendTicket(int tickets,int bookId );
 	public String selectBookContent(String content);
 	/**
-	 * 陈江龄的测试
+	 *
+	 *
+	 * dfbhbd
 	 */
-	public void test();
 }
