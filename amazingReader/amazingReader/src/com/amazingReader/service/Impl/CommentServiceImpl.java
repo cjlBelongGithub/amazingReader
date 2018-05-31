@@ -10,7 +10,9 @@ import com.amazingReader.mapper.ChapterMapper;
 import com.amazingReader.mapper.CommentLikeRecordMapper;
 import com.amazingReader.mapper.CommentMapper;
 import com.amazingReader.service.Interface.CommentService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CommentServiceImpl implements CommentService {
 	@Autowired
 	private CommentMapper commentMapper;
