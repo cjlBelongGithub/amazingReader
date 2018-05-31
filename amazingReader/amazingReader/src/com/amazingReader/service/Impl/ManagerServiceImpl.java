@@ -11,7 +11,9 @@ import com.amazingReader.mapper.ManagerMapper;
 import com.amazingReader.mapper.ReportChapterMapper;
 import com.amazingReader.mapper.ReportCommentMapper;
 import com.amazingReader.service.Interface.ManagerService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ManagerServiceImpl implements ManagerService{
 	@Autowired
 	private ManagerMapper managerMapper;
@@ -19,6 +21,13 @@ public class ManagerServiceImpl implements ManagerService{
 	private ReportChapterMapper reportChapterMapper;
 	@Autowired
 	private ReportCommentMapper reportCommentMapper;
+
+
+	@Override
+	public void login(Manager manager) {
+		//TODO
+	}
+
 	@Override
 	public void register(Manager manager) {
 		managerMapper.add(manager);
