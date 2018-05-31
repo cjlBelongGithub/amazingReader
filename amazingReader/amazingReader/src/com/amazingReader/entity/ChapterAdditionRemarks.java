@@ -18,7 +18,6 @@ public class ChapterAdditionRemarks {
     }
     
     public ChapterAdditionRemarks() {
-		// TODO Auto-generated constructor stub
 	}
 
     public void setBookImg1(Blob bookImg1) {

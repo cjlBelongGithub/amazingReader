@@ -6,7 +6,6 @@ public class BookStyle {
     private String bookStyleName;
     
     public BookStyle() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getBookStyleId() {

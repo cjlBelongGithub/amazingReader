@@ -6,7 +6,6 @@ public class BookLabelRelation {
     private Integer labelId;
     
     public BookLabelRelation() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getBookId() {

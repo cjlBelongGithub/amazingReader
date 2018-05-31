@@ -13,13 +13,13 @@ public interface ManagerService {
 	List<ReportChapter> getReportChapter(int managerID);
 	List<ReportComment> getReportComment(int managerID);
 	/**
-	 * 鎺ュ彈涓炬姤锛岃繘鍏ュ鐞嗙姸鎬�
+	 * 接受举报
 	 */
 	void acepteReportChapter(int reportId);
 	
 	void acepteReportComment(int reportId);
 	/**
-	 * 鎷掔粷涓炬姤
+	 * 拒绝举报
 	 * @param reportId
 	 */
 	void refuseReportChapter(int reportId);
@@ -27,7 +27,7 @@ public interface ManagerService {
 	void refuseReportComment(int reportId);
 	
 	/**
-	 * 澶勭悊涓炬姤
+	 * 处理举报
 	 * @param reportSolution
 	 */
 	void dealReportChapter(int reportId,String reportSolution);

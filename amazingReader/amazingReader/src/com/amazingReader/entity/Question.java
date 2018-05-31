@@ -16,7 +16,6 @@ public class Question {
     private String questionDealStatusId;
     
     public Question() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getId() {

@@ -9,7 +9,6 @@ public class ReaderDivination {
     private String userConstellationDescription;
     
     public ReaderDivination() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getUserConstellationId() {

@@ -10,7 +10,6 @@ public class ManangerOperateLog {
     private String managerOperateObject;
     
     public ManangerOperateLog() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getManagerLogId() {

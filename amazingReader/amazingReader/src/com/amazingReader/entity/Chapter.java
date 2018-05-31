@@ -26,7 +26,6 @@ public class Chapter {
     private Boolean chapterAddition;
     
     public Chapter() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getChapterId() {
