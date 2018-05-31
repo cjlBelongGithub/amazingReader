@@ -6,7 +6,6 @@ public class ReaderOrderType {
     private String orderTypeName;
     
     public ReaderOrderType() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getOrderTypeId() {

@@ -6,7 +6,6 @@ public class ManagerOperate {
     private String managerOperateName;
     
     public ManagerOperate() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getManagerOperateId() {

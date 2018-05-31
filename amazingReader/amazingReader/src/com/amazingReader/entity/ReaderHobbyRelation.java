@@ -6,7 +6,6 @@ public class ReaderHobbyRelation {
     private Integer hobbyLabelId;
     
     public ReaderHobbyRelation() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getHobbyReaderId() {

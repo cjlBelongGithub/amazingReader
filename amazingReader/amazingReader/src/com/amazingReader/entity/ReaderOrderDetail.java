@@ -12,7 +12,6 @@ public class ReaderOrderDetail {
     private int readerId;
     
     public ReaderOrderDetail() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getReaderOrderId() {

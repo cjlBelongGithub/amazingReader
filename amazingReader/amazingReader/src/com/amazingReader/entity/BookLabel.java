@@ -6,7 +6,6 @@ public class BookLabel {
     private String bookLabelName;
 
     public BookLabel() {
-		// TODO Auto-generated constructor stub
 	}
     
     public Integer getBookLabelId() {

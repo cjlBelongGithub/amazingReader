@@ -21,10 +21,10 @@ public interface CommentService {
 	boolean comment(Comment comment);
 	/**
 	 * 开关方式控制点赞
-	 * 
+	 * 用boolean值返回是否点了赞
 	 * @param commentId
 	 */
-	void like(int commentId,int readerId);
+	boolean like(int commentId,int readerId);
 	
 	void removeComment(int commentId);
 	
