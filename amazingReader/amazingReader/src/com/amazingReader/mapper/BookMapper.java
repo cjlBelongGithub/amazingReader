@@ -20,4 +20,9 @@ public interface BookMapper {
 	public List<Book> getBooksByLabelId(int LabelId);
 	public void addRecommendTicket(int tickets,int bookId );
 	public String selectBookContent(String content);
+	/**
+	 *
+	 *
+	 * dfbhbd
+	 */
 }
