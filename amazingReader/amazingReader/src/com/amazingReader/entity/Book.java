@@ -23,7 +23,7 @@ public class Book {
 
     private Blob bookCover;
     
-    private int clickTimes;
+    private Integer clickTimes;
     
     public Book() {
 		super();
@@ -120,13 +120,13 @@ public class Book {
 
 
 
-	public int getClickTimes() {
+	public Integer getClickTimes() {
 		return clickTimes;
 	}
 
 
 
-	public void setClickTimes(int clickTimes) {
+	public void setClickTimes(Integer clickTimes) {
 		this.clickTimes = clickTimes;
 	}
 }
