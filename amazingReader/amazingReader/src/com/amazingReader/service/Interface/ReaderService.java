@@ -33,6 +33,7 @@ public interface ReaderService {
 	 * 直接阅读使用这个方法
 	 * 		返回传入书籍ID的首章
 	 * @param bookID
+	 * @param readerId
 	 * @return
 	 */
 	Chapter readFirstChapterBy(int bookID,int readerId);
@@ -41,7 +42,7 @@ public interface ReaderService {
 	 * 比对用户输入手机号和注册手机号
 	 * 控制control端的验证码发送
 	 * @param telNum
-	 * @param reader
+	 * @param readerId
 	 * @return
 	 */
 	boolean forgetPassword(String telNum ,int readerId);
@@ -73,8 +74,8 @@ public interface ReaderService {
 	/**
 	 * 给出书籍号和读者信息（从session拿）
 	 * 把书籍存入书架，章节默认值为1
-	 * @param bookID
-	 * @param reader
+	 * @param bookId
+	 * @param readerId
 	 * @return
 	 */
 	boolean addBookToBookShelf(int bookId,int readerId);
@@ -88,13 +89,13 @@ public interface ReaderService {
 	/**
 	 * 传入被举报章节ID，当前读者ID，举报类型ID，以及原因
 	 * 其他字段留空
-	 * @param reportComment
+	 * @param reportChapter
 	 * @return
 	 */
 	boolean reportChapter(ReportChapter reportChapter);
 	/**
 	 * 获得当前读者发出的评论
-	 * @param self
+	 * @param readerId
 	 * @return
 	 */
 	List<Comment> readCommentsSendBy(int readerId);

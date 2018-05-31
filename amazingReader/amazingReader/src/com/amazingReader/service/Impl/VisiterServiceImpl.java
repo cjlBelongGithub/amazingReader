@@ -8,7 +8,9 @@ import com.amazingReader.entity.Book;
 import com.amazingReader.entity.Chapter;
 import com.amazingReader.mapper.ChapterMapper;
 import com.amazingReader.service.Interface.VisitorService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VisiterServiceImpl implements VisitorService{
 	@Autowired
 	private ChapterMapper chapterMapper;

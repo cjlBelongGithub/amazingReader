@@ -17,7 +17,6 @@
           <property name="username" value="${jdbc.username}"/>
     </bean>
 
-
      <!--sqlSessionFactory实例化  通过数据源和mybatis的核心配置文件去实例化sqlSession工程-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSourceId"/>
@@ -26,7 +25,7 @@
 
     <!--持久层实现类的对象实例化      sqlSession    整包      实现类对象的id是mapper接口名：第一个字母小写-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-      <property name="basePackage" value="com.gem.account.dao"/>
+      <property name="basePackage" value="com.amazingReader.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

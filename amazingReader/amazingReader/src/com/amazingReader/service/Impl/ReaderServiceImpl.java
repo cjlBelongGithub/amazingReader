@@ -25,7 +25,9 @@ import com.amazingReader.mapper.RechargeMapper;
 import com.amazingReader.mapper.ReportChapterMapper;
 import com.amazingReader.mapper.ReportCommentMapper;
 import com.amazingReader.service.Interface.ReaderService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ReaderServiceImpl implements ReaderService{
 	@Autowired
 	private ReaderMapper readerMapper;
