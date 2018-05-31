@@ -8,7 +8,6 @@ public class DealStatus {
     private String questionDealStatusName;
     
     public DealStatus() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getQuestionDealStatusId() {

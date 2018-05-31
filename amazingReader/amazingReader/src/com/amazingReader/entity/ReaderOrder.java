@@ -24,7 +24,6 @@ public class ReaderOrder {
 
     
     public ReaderOrder() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getReaderOrderId() {

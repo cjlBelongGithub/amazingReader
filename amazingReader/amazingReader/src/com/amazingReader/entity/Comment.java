@@ -32,7 +32,6 @@ public class Comment {
     private boolean commentIsRead;
     
     public Comment() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getCommentId() {

@@ -27,14 +27,16 @@ public class CommentServiceImpl implements CommentService {
 	}
 
 	@Override
-	public void like(int commentId,int readerId) {
+	public boolean like(int commentId,int readerId) {
 		CommentLikeRecord like = new CommentLikeRecord();
 		like.setCommentID(commentId);
 		like.setReaderID(readerId);
 		if(commentLikeRecordMapper.isLiked(readerId, commentId)==0){
 			commentLikeRecordMapper.addCommentLike(like);
+			return true;
 		}else{
 			commentLikeRecordMapper.removeLike(like);
+			return false;
 		}
 	}
 

@@ -6,7 +6,6 @@ public class BookStatus {
     private String bookStatusName;
     
     public BookStatus() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getBookStatusId() {

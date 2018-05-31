@@ -12,7 +12,6 @@ public class Recharge {
     private Date rechargeTime;
     
     public Recharge() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getRechargeId() {

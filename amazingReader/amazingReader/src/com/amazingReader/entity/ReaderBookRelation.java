@@ -12,7 +12,6 @@ public class ReaderBookRelation {
     private Date readerBookAddTime;
     
     public ReaderBookRelation() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getReaderId() {

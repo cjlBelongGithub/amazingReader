@@ -20,4 +20,8 @@ public interface BookMapper {
 	public List<Book> getBooksByLabelId(int LabelId);
 	public void addRecommendTicket(int tickets,int bookId );
 	public String selectBookContent(String content);
+	/**
+	 * 陈江龄的测试
+	 */
+	public void test();
 }

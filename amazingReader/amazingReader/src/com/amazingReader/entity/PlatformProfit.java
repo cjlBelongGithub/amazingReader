@@ -12,7 +12,6 @@ public class PlatformProfit {
     private Double profitPrice;
     
     public PlatformProfit() {
-		// TODO Auto-generated constructor stub
 	}
 
     public Integer getOrderId() {
